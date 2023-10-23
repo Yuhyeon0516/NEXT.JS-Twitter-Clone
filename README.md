@@ -1,1 +1,1 @@
-# NEXT.JS-Twitter-Clone
+# NextJS-X.com-Clone
