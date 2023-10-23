@@ -4,8 +4,6 @@
 
 -   layout은 정적으로 고정시켜두는 layout이고 template은 동적으로 data를 움직이는 layout이다.(보통 layout.tsx를 더욱 많이씀)
 
-<br/>
-
 ## css
 
 -   tailwind => 호불호도 심하고 가독성이 안좋다
@@ -38,7 +36,7 @@ page.module.css는 특정 page 또는 module에서 사용하는 css를 개별로
 
     상세 : https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
 
--   \_name : private 폴더로 path에 관여하지않는 private한 폴더이며 주로 폴더 정리용으로 쓰인다.(ex: component)
+-   \_name : path, route에 관여하지않는 private한 폴더이며 주로 폴더 정리용으로 쓰인다.(ex: component)
 
 ## redirection
 
@@ -47,6 +45,6 @@ page.module.css는 특정 page 또는 module에서 사용하는 css를 개별로
 
 ## useSelectedLayoutSegment, useSelectedLayoutSegments
 
--   useSelectedLayoutSegment를 사용하면 http://localhost:3000/ 뒤에오는 최상위 경로 하나를 가져올 수 있음.(ex: http://localhost:3000/home에서 사용하면 home이 리턴되며 http://localhost:3000/compose/tweet에서 사용하면 compose만 리턴됨)
+-   useSelectedLayoutSegment를 사용하면 http://localhost:3000/ 뒤에오는 최상위 경로 하나를 가져올 수 있음.(ex: http://localhost:3000/home에서 사용하면 home이 리턴되며 http://localhost:3000/compose/tweet 에서 사용하면 compose만 리턴됨)
 
--   useSelectedLayoutSegments를 사용하면 http://localhost:3000/ 뒤에오는 모든 경로를 Array형태로 가져올 수 있음.(ex: http://localhost:3000/compose/tweet에서 사용하면 ["compose", "tweet"]이 리턴됨)
+-   useSelectedLayoutSegments를 사용하면 http://localhost:3000/ 뒤에오는 모든 경로를 Array형태로 가져올 수 있음.(ex: http://localhost:3000/compose/tweet 에서 사용하면 ["compose", "tweet"]이 리턴됨)
