@@ -22,7 +22,7 @@
 
 page.module.css는 특정 page 또는 module에서 사용하는 css를 개별로 정의해두는 곳이며 globals.css는 project 전체에 적용되는 css를 정의해두는 곳이다.
 
-## 폴더명 여러 규칙들
+## 폴더명 여러 규칙들(Routing Convention)
 
 -   name : path명으로 반영이 되는 폴더(ex: login 폴더를 만들면 http://localhost:3000/login으로 접속하면 login 폴더 내 page.tsx를 그려준다.)
 
