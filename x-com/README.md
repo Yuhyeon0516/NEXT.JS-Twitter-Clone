@@ -44,3 +44,9 @@ page.module.css는 특정 page 또는 module에서 사용하는 css를 개별로
 
 -   client redirection은 useRouter의 replace or push를 사용
 -   server redirection은 redirect 함수를 사용
+
+## useSelectedLayoutSegment, useSelectedLayoutSegments
+
+-   useSelectedLayoutSegment를 사용하면 http://localhost:3000/ 뒤에오는 최상위 경로 하나를 가져올 수 있음.(ex: http://localhost:3000/home에서 사용하면 home이 리턴되며 http://localhost:3000/compose/tweet에서 사용하면 compose만 리턴됨)
+
+-   useSelectedLayoutSegments를 사용하면 http://localhost:3000/ 뒤에오는 모든 경로를 Array형태로 가져올 수 있음.(ex: http://localhost:3000/compose/tweet에서 사용하면 ["compose", "tweet"]이 리턴됨)
