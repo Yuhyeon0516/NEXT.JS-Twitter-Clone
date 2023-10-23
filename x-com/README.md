@@ -24,9 +24,9 @@ page.module.css는 특정 page 또는 module에서 사용하는 css를 개별로
 
 ## 폴더명 여러 규칙들(Routing Convention)
 
--   name : path명으로 반영이 되는 폴더(ex: login 폴더를 만들면 http://localhost:3000/login으로 접속하면 login 폴더 내 page.tsx를 그려준다.)
+-   name : path, layout으로 반영이 되는 폴더(ex: login 폴더를 만들면 http://localhost:3000/login으로 접속하면 login 폴더 내 page.tsx를 그려준다.)
 
--   (name) : path에는 관여를 안하고 간단하게 생각하면 특정 조건에 따른 폴더 경로를 나눠주는 역할로 보면될듯.(ex: login, admin 등)
+-   (name) : path, layout에는 관여를 안하고 간단하게 생각하면 특정 조건에 따른 그룹화를 한다고 생각하면될듯.(ex: login, admin 등)
 
 -   @name : Parallel route로 layout에서 props로 children과 같이 받아와서 두개의 화면을 동시에 보여줄수 있다.(name은 props와 이름만 일치 시키면됨. 예시로 @modal로 만든 후 layout에서 props 매개변수 이름도 modal로 만들어주면된다. props type은 ReactNode)
 
@@ -39,3 +39,8 @@ page.module.css는 특정 page 또는 module에서 사용하는 css를 개별로
     상세 : https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
 
 -   \_name : private 폴더로 path에 관여하지않는 private한 폴더이며 주로 폴더 정리용으로 쓰인다.(ex: component)
+
+## redirection
+
+-   client redirection은 useRouter의 replace or push를 사용
+-   server redirection은 redirect 함수를 사용
