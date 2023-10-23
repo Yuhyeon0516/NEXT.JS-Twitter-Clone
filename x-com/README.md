@@ -21,3 +21,21 @@
 ## page.module.css vs globals.css (css module)
 
 page.module.css는 특정 page 또는 module에서 사용하는 css를 개별로 정의해두는 곳이며 globals.css는 project 전체에 적용되는 css를 정의해두는 곳이다.
+
+## 폴더명 여러 규칙들
+
+-   name : path명으로 반영이 되는 폴더(ex: login 폴더를 만들면 http://localhost:3000/login으로 접속하면 login 폴더 내 page.tsx를 그려준다.)
+
+-   (name) : path에는 관여를 안하고 간단하게 생각하면 특정 조건에 따른 폴더 경로를 나눠주는 역할로 보면될듯.(ex: login, admin 등)
+
+-   @name : Parallel route로 layout에서 props로 children과 같이 받아와서 두개의 화면을 동시에 보여줄수 있다.(name은 props와 이름만 일치 시키면됨. 예시로 @modal로 만든 후 layout에서 props 매개변수 이름도 modal로 만들어주면된다. props type은 ReactNode)
+
+    상세 : https://nextjs.org/docs/app/building-your-application/routing/parallel-routes
+
+-   (.)name : intercepting route로 주소가 name의 경로로 변경되었을때 실제 name의 결로에 있는 page.tsx가 화면을 control하지 않고 intercepting route의 page.tsx가 화면의 control을 intercepting해와서 보여주는 개념이라고 생각하면됨.
+
+    추가로 실제 경로를 삭제하면 안됨 최초 접속시에는 intercepting을 하지만 새로고침 할때는 실제 경로로 접속을 하게되니 실제 경로에도 같은 내용의 동작을 구현해야함.
+
+    상세 : https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
+
+-   \_name : private 폴더로 path에 관여하지않는 private한 폴더이며 주로 폴더 정리용으로 쓰인다.(ex: component)
