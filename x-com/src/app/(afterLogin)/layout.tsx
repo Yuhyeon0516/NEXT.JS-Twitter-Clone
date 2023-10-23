@@ -6,7 +6,7 @@ import xLogo from '../../../public/xLogo.ico';
 import NavMenu from './_component/NavMenu';
 import LogoutButton from './_component/LogoutButton';
 import TrendSection from './_component/TrendSection';
-import FollowRecommnend from './_component/FollowRecommend';
+import FollowRecommend from './_component/FollowRecommend';
 
 export default function AfterLoginLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -47,7 +47,7 @@ export default function AfterLoginLayout({ children }: { children: React.ReactNo
                         </div>
 
                         <TrendSection />
-                        <FollowRecommnend />
+                        <FollowRecommend />
                     </section>
                 </div>
             </div>
