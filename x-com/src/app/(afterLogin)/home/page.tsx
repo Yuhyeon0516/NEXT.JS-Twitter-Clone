@@ -10,6 +10,10 @@ export default function Page() {
             <TabProvider>
                 <Tab />
                 <PostForm />
+                <Post />
+                <Post />
+                <Post />
+                <Post />
             </TabProvider>
         </div>
     );
