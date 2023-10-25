@@ -1,42 +1,57 @@
-import Link from 'next/link';
-import style from './post.module.css';
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import 'dayjs/locale/ko';
-import ActionButtons from './ActionButtons';
+import Link from "next/link";
+import style from "./post.module.css";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import "dayjs/locale/ko";
+import ActionButtons from "./ActionButtons";
+import PostArticle from "../../_component/PostArticle";
 
-dayjs.locale('ko');
+dayjs.locale("ko");
 dayjs.extend(relativeTime);
 
 export default function Post() {
     const target = {
+        postId: 1,
         User: {
-            id: 'elonmusk',
-            nickname: 'Elon Musk',
-            image: '/X_black.ico',
+            id: "elonmusk",
+            nickname: "Elon Musk",
+            image: "/X_black.ico",
         },
-        content: 'X 클론코딩 중',
+        content: "X 클론코딩 중",
         createdAt: new Date(),
         Images: [],
     };
+
     return (
-        <article className={style.post}>
+        <PostArticle post={target}>
             <div className={style.postWrapper}>
                 <div className={style.postUserSection}>
-                    <Link href={`/${target.User.id}`} className={style.postUserImage}>
-                        <img src={target.User.image} alt={target.User.nickname} />
+                    <Link
+                        href={`/${target.User.id}`}
+                        className={style.postUserImage}
+                    >
+                        <img
+                            src={target.User.image}
+                            alt={target.User.nickname}
+                        />
                         <div className={style.postShade} />
                     </Link>
                 </div>
                 <div className={style.postBody}>
                     <div className={style.postMeta}>
                         <Link href={`/${target.User.id}`}>
-                            <span className={style.postUserName}>{target.User.nickname}</span>
+                            <span className={style.postUserName}>
+                                {target.User.nickname}
+                            </span>
                             &nbsp;
-                            <span className={style.postUserId}>@{target.User.id}</span>
+                            <span className={style.postUserId}>
+                                @{target.User.id}
+                            </span>
                             &nbsp; · &nbsp;
                         </Link>
-                        <span className={style.postDate}>{dayjs(target.createdAt).fromNow(true)}전</span>
+                        <span className={style.postDate}>
+                            {dayjs(target.createdAt).fromNow(true)}전
+                        </span>
                     </div>
                     <div>{target.content}</div>
                     <div className={style.postImageSection}>
@@ -49,6 +64,6 @@ export default function Post() {
                     <ActionButtons />
                 </div>
             </div>
-        </article>
+        </PostArticle>
     );
 }

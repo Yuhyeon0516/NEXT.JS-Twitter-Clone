@@ -48,3 +48,18 @@ page.module.css는 특정 page 또는 module에서 사용하는 css를 개별로
 -   useSelectedLayoutSegment를 사용하면 http://localhost:3000/ 뒤에오는 최상위 경로 하나를 가져올 수 있음.(ex: http://localhost:3000/home에서 사용하면 home이 리턴되며 http://localhost:3000/compose/tweet 에서 사용하면 compose만 리턴됨)
 
 -   useSelectedLayoutSegments를 사용하면 http://localhost:3000/ 뒤에오는 모든 경로를 Array형태로 가져올 수 있음.(ex: http://localhost:3000/compose/tweet 에서 사용하면 ["compose", "tweet"]이 리턴됨)
+
+## client component가 부모일때 자식 component는 server component로 사용하는법
+
+-   부모 Component에서 아래와 같이 children으로 server component를 받아오면됨
+    ```HTML
+    <article onClick={onClick} className={style.post}>
+        {children}
+    </article>
+    ```
+-   아래와 같이 import하여 사용하면 server component로 사용되지 않음
+    ```HTML
+    <article onClick={onClick} className={style.post}>
+        <PostItem />
+    </article>
+    ```
