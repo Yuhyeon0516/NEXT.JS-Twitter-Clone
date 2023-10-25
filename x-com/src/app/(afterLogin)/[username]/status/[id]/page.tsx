@@ -10,6 +10,7 @@ export default function Page() {
                 <Backbutton />
                 <h3 className={style.headerTitle}>게시하기</h3>
             </div>
+            <div style={{ height: 53 }}></div>
             <Post />
             <CommentForm />
             <div>
