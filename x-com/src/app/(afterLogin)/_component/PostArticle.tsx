@@ -14,7 +14,10 @@ type Props = {
         };
         content: string;
         createdAt: Date;
-        Images: string[];
+        Images: {
+            imageId: number;
+            link: string;
+        }[];
     };
 };
 
