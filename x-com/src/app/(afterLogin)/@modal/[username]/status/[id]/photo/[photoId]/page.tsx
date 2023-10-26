@@ -9,7 +9,7 @@ type Props = {
     params: { username: string; id: string; photoId: string };
 };
 
-export default function Page({ params }: Props) {
+export default function Page() {
     const photo = {
         link: faker.image.urlLoremFlickr(),
         Post: {
